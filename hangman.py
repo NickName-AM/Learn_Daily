@@ -57,19 +57,12 @@ r'''
 '''
 ]
 
-def OS_CHECK():
-  accepted_OS = ["win32", "linux"]
-  if sys.platform not in accepted_OS:
-    input("Only for Windows and linux.\n Press Enter to exit.")
-    exit()
-
 def clear():
   if sys.platform == "win32":
     os.system("CLS")
   elif sys.platform == "linux":
     os.system("clear")
-  #elif sys.platform == "OS_NAME":             ## Go to python.org to find the OS_NAME for your OS 
-  #  os.system(" ADD YOUR COMMAND HERE. ")
+
   
 def to_print():
   # Print the doll to be hanged
@@ -86,7 +79,7 @@ def indices(word, letter):
     for i in char_list:
         if i == letter.lower():
             indexs.append(char_list.index(i))
-            char_list[char_list.index(i)] = "00"
+            char_list[char_list.index(i)] = "0X"
     return indexs
 
 def lost_animation():
@@ -96,7 +89,7 @@ def lost_animation():
     print(hangman[0][a])
     a+=1
     sleep(0.4)
-  print("Correct word: {0}".format(random_word))
+  print("Correct word(s): {0}".format(random_word))
   sleep(2)
   exit()
 
@@ -142,10 +135,6 @@ def final(word):
         else:
             # Chop a part of the body
             man -= 1
-
-
-OS_CHECK()
-
 
 # Add more if you want
 word_list = ["volley", "table tennis", "yeet", "heat", "beach", "watch", "sakura flower", "sakura tree", "saber", "kujou sara", "ganyu", "zhongli", "xinqiu", "morax", "azdaha", "pogchamp", "rickroll", "never gonna give you up", "never gonna let you down", "mouse", "wind", "shadow", "yanfei", "football", "tartaglia", "underworld", "truth", "word", "keyboard", "laptop", "curtain", "mecha", "shogun"]
